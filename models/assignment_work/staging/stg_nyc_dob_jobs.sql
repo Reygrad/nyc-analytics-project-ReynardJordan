@@ -17,6 +17,7 @@ cleaned AS (
             signoff_date,
             borough,
             council_district,
+            zip,          -- Added to prevent the duplicate column error
             zip_code,
             filing_representative_first_name,
             filing_representative_middle_initial,
