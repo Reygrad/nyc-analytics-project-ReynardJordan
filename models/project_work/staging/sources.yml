@@ -1,0 +1,16 @@
+version: 2
+
+sources:
+  - name: nyc_open_data_raw
+    description: Raw data loaded from NYC Open Data for the Group 8 pipeline
+    database: rjcis9440
+    schema: nyc_open_data_raw
+    tables:
+      - name: 311_complaints_raw
+        description: |
+          NYC 311 Service Requests. 
+          One row per service request complaint.
+      - name: evictions_raw
+        description: |
+          NYC Evictions data from the Department of Investigation. 
+          One row per executed eviction.

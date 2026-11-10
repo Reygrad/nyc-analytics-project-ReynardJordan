@@ -38,3 +38,16 @@ models:
 
         dot_311:
           +materialized: table
+    project_work:
+      staging:
+        +materialized: view
+        +schema: group8_staging
+      marts:
+        +materialized: table
+        +schema: group8_warehouse_marts
+        conformed:
+          +materialized: table
+        evictions:
+          +materialized: table
+        nyc_311:
+          +materialized: table
