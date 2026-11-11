@@ -51,4 +51,4 @@ LEFT JOIN {{ ref('dim_location') }} AS l
     AND e.longitude IS NOT DISTINCT FROM l.longitude
     AND e.council_district IS NOT DISTINCT FROM l.council_district
 LEFT JOIN {{ ref('dim_property_type') }} AS p
-    ON e.property_type = p.property_type[cite: 36, 37, 38, 39, 40, 42, 43]
+    ON e.property_type = p.property_type

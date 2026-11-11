@@ -47,7 +47,7 @@ LEFT JOIN {{ ref('dim_location') }} AS l
     AND c.latitude IS NOT DISTINCT FROM l.latitude
     AND c.longitude IS NOT DISTINCT FROM l.longitude
     AND c.council_district IS NOT DISTINCT FROM l.council_district
-LEFT JOIN {{ ref('dim_complaint_type') }} AS t
+LEFT JOIN {{ ref('dim_hpd_complaint_type') }} AS t
     ON c.problem = t.problem
     AND c.problem_detail IS NOT DISTINCT FROM t.problem_detail
 LEFT JOIN {{ ref('dim_complaint_status') }} AS s
