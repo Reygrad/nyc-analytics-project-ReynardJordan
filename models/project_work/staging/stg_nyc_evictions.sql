@@ -15,9 +15,11 @@ renamed_evictions AS (
         residential_commercial_ind,
         borough,
         eviction_zip AS zip_code,
-        latitude,
-        longitude
+        eviction_possession AS eviction_legal_possession,
+        SAFE_CAST(latitude AS FLOAT64) AS latitude,
+        SAFE_CAST(longitude AS FLOAT64) AS longitude,
+        SAFE_CAST(council_district AS INT64) AS council_district
     FROM raw_evictions
 )
 
-SELECT * FROM renamed_evictions
+SELECT DISTINCT * FROM renamed_evictions

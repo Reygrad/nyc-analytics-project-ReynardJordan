@@ -12,11 +12,13 @@ renamed_311 AS (
         agency_name,
         complaint_type,
         descriptor,
+        status,
         incident_zip AS zip_code,
         borough,
         latitude,
-        longitude
+        longitude,
+        SAFE_CAST(council_district AS INT64) AS council_district
     FROM raw_311
 )
 
-SELECT * FROM renamed_311
+SELECT DISTINCT * FROM renamed_311
