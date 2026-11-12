@@ -37,11 +37,11 @@ SELECT
         ELSE NULL
     END AS resolution_days
 FROM complaints AS c
-LEFT JOIN {{ ref('dim_date') }} AS created
+LEFT JOIN {{ ref('dim_project_date') }} AS created
     ON DATE(c.created_date) = created.calendar_date
-LEFT JOIN {{ ref('dim_date') }} AS closed
+LEFT JOIN {{ ref('dim_project_date') }} AS closed
     ON DATE(c.closed_date) = closed.calendar_date
-LEFT JOIN {{ ref('dim_location') }} AS l
+LEFT JOIN {{ ref('dim_project_location') }} AS l
     ON c.zip_code = l.zip_code
     AND c.borough = l.borough
     AND c.latitude IS NOT DISTINCT FROM l.latitude

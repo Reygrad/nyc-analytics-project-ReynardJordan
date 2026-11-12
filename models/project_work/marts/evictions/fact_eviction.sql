@@ -42,9 +42,9 @@ SELECT
     e.eviction_legal_possession,
     1 AS eviction_count
 FROM evictions AS e
-LEFT JOIN {{ ref('dim_date') }} AS d
+LEFT JOIN {{ ref('dim_project_date') }} AS d
     ON DATE(e.executed_date) = d.calendar_date
-LEFT JOIN {{ ref('dim_location') }} AS l
+LEFT JOIN {{ ref('dim_project_location') }} AS l
     ON e.zip_code = l.zip_code
     AND e.borough = l.borough
     AND e.latitude IS NOT DISTINCT FROM l.latitude
